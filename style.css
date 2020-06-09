@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 20px 0;
+    background-color: tomato;
+}
+
+.grid{
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.card{
+    margin: 5px;
+    /* background-color: wheat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 150px;
+    width: 150px; */
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    margin: 5px;
+}
+
+.card,
+.front,
+.back{
+    height: 150px;
+    width: 150px;
+}
+
+.back,
+.front{
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front
+{
+    z-index: 2;
+    background: wheat url('..img/question.gif') no-repeat center center / contain;
+}
+
+.back
+{
+    transform: rotateY(180deg);
+    background-color: tomato;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected
+{
+    /* border: 5px solid brown; */
+    transform: rotateY(180deg);
+}
+
+.match .front
+{
+    /* border: 5px solid darkslategrey; */
+    background: tomato !important;
+}
